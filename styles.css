@@ -1,0 +1,250 @@
+@property --lit {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #2a6266;
+}
+
+:root {
+  --pine: #0f3b3e;
+  --harbour: #1e5256;
+  --lamp: #e3b23c;
+  --ember: #c9792e;
+  --mist: #dde6e3;
+  --paper: #f3f6f4;
+  --ink: #132022;
+  --soft: #4a5a5c;
+  --display: "Young Serif", Georgia, serif;
+  --body: "Instrument Sans", system-ui, sans-serif;
+  --gutter: clamp(16px, 5vw, 72px);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 1.0625rem/1.55 var(--body);
+}
+
+h1, h2, h3, p, dl, dd, ul { margin: 0; padding: 0; }
+ul { list-style: none; }
+h1, h2 { font-family: var(--display); font-weight: 400; letter-spacing: -.01em; }
+h2 { font-size: clamp(2rem, 4.4vw, 3.25rem); line-height: 1.1; }
+
+:focus-visible { outline: 3px solid var(--ember); outline-offset: 2px; }
+
+.defs { position: absolute; }
+
+.skip {
+  position: absolute;
+  left: 16px;
+  top: -60px;
+  z-index: 3;
+  background: var(--lamp);
+  color: var(--ink);
+  padding: 8px 14px;
+}
+.skip:focus { top: 12px; }
+
+/* Header */
+.site-head {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px var(--gutter);
+  color: #fff;
+}
+.site-head a { color: inherit; text-decoration: none; }
+.brand { font-family: var(--display); font-size: 1.3rem; white-space: nowrap; }
+.site-head nav { display: flex; align-items: center; gap: 28px; font-weight: 500; font-size: 1rem; }
+.site-head nav a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.site-head .nav-cta { border: 1.5px solid var(--lamp); color: var(--lamp); padding: 7px 16px; border-radius: 4px; white-space: nowrap; }
+
+/* Hero: the dusk scene, with lights coming on once on load */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  background: linear-gradient(180deg, var(--pine) 0%, var(--harbour) 46%, #7f7a4c 76%, var(--ember) 100%);
+  color: #fff;
+  overflow: hidden;
+}
+.hero-copy { position: relative; z-index: 1; max-width: 860px; padding: clamp(96px, 15vh, 140px) var(--gutter) 0; }
+h1 { font-size: clamp(2.6rem, 6.6vw, 5.4rem); line-height: 1.03; }
+.hero-copy p { max-width: 54ch; margin-top: 20px; font-size: 1.15rem; color: #e6eeec; }
+
+.dusk { position: absolute; inset: auto 0 0; width: 100%; height: 62%; }
+.dusk .hill { fill: #0c2f31; }
+.dusk .pines { fill: #0a2628; }
+.dusk .house { fill: #0a2a2c; }
+.dusk .eaves { fill: #051a1c; }
+.dusk .doorway { fill: #051a1c; }
+.dusk .lights rect { fill: var(--lamp); animation: light .5s var(--d) both; }
+
+@keyframes light {
+  from { fill: #123c3f; }
+  to { fill: var(--lamp); }
+}
+
+.finder {
+  position: relative;
+  z-index: 1;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) auto;
+  gap: 12px;
+  align-items: end;
+  margin: 0 var(--gutter) 28px;
+  padding: 14px;
+  background: #fff;
+  color: var(--ink);
+  border-radius: 6px;
+  box-shadow: 0 12px 30px rgb(5 26 28 / .45);
+}
+.finder label, .viewing label { display: grid; gap: 4px; font-weight: 600; font-size: .95rem; }
+
+select, input {
+  width: 100%;
+  min-height: 46px;
+  padding: 8px 10px;
+  border: 1.5px solid #9fb0ae;
+  border-radius: 4px;
+  background: #fff;
+  color: var(--ink);
+  font: 400 1rem var(--body);
+}
+
+button {
+  min-height: 46px;
+  padding: 0 24px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--lamp);
+  color: var(--ink);
+  font: 600 1rem var(--body);
+  cursor: pointer;
+}
+button:hover { background: #efc25a; }
+
+/* Listings stand on one shared street line */
+.homes { padding: clamp(56px, 9vw, 112px) var(--gutter); }
+.homes-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+#result-count { color: var(--soft); }
+
+.street {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 56px 0;
+  margin-top: 40px;
+}
+.plot {
+  --lit: #2a6266;
+  --wall: var(--pine);
+  --wall-2: var(--harbour);
+  --roof: #0a2a2c;
+  transition: --lit .25s;
+}
+.plot:hover, .plot:focus-within { --lit: var(--lamp); }
+.plot svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 0 clamp(8px, 2vw, 28px);
+  border-bottom: 3px solid var(--ink);
+}
+.wall { fill: var(--wall); }
+.wall-2 { fill: var(--wall-2); }
+.roof { fill: var(--roof); }
+.post { fill: var(--roof); }
+.door { fill: var(--roof); }
+.pine { fill: var(--wall-2); }
+.win { fill: var(--lit); }
+
+.plot h3 { margin-top: 16px; padding-right: 24px; font: 400 1.5rem/1.2 var(--display); }
+.plot p { padding-right: 24px; }
+.where, .spec { color: var(--soft); }
+.price { margin-top: 8px; font-weight: 600; font-size: 1.15rem; }
+.plot a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 4px 0;
+  color: var(--harbour);
+  font-weight: 600;
+  text-underline-offset: 4px;
+}
+.plot[hidden] { display: none; }
+
+.empty { margin-top: 40px; padding: 28px 0; border-top: 3px solid var(--ink); }
+.empty button { margin-top: 14px; }
+
+/* Why */
+.why {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 40px clamp(32px, 6vw, 96px);
+  padding: clamp(56px, 9vw, 112px) var(--gutter);
+  background: var(--mist);
+}
+.why dl { display: grid; gap: 28px; }
+dt { font-weight: 600; font-size: 1.15rem; }
+dd { max-width: 58ch; color: var(--soft); }
+
+/* Viewing */
+.viewing {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 32px clamp(32px, 6vw, 96px);
+  padding: clamp(56px, 9vw, 112px) var(--gutter);
+  background: var(--pine);
+  color: #fff;
+}
+.viewing > div p { max-width: 42ch; margin-top: 14px; color: #dbe6e4; }
+#viewing-form { display: grid; gap: 18px; max-width: 560px; }
+#viewing-form button { justify-self: start; }
+.viewing select, .viewing input { border-color: #fff; }
+.viewing .invalid { border-color: var(--lamp); outline: 2px solid var(--lamp); }
+.err { color: var(--lamp); font-weight: 500; font-size: .95rem; }
+.err:empty { display: none; }
+.sent { padding: 12px 14px; background: #fff; color: var(--ink); border-radius: 4px; }
+
+/* Footer */
+.site-foot { padding: 32px var(--gutter); background: #0a2a2c; color: #d5e0de; }
+.site-foot p:last-child { max-width: 70ch; margin-top: 8px; }
+.foot-brand { font-family: var(--display); font-size: 1.2rem; color: #fff; }
+
+@media (max-width: 900px) {
+  .street { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .finder { grid-template-columns: repeat(2, 1fr); }
+  .finder label:last-of-type { grid-column: 1 / -1; }
+  .finder button { grid-column: 1 / -1; }
+  .why, .viewing { grid-template-columns: minmax(0, 1fr); }
+  /* Stack the scene under the copy so the house never runs behind the text. */
+  .hero { min-height: 0; grid-template-rows: auto auto auto; }
+  .dusk { position: relative; inset: auto; grid-row: 2; height: max(220px, 46vw); margin-top: 24px; }
+  .finder { grid-row: 3; margin: 0; padding: 16px var(--gutter) 20px; border-radius: 0; box-shadow: none; }
+}
+
+@media (max-width: 600px) {
+  .site-head nav a:not(.nav-cta) { display: none; }
+  .brand { font-size: 1.15rem; }
+  .street { grid-template-columns: minmax(0, 1fr); gap: 44px; }
+  .finder { grid-template-columns: minmax(0, 1fr); }
+  .finder label:last-of-type { grid-column: auto; }
+  .hero-copy p { font-size: 1.05rem; }
+  /* Touch screens have no hover, so the windows stay lit. */
+  .plot { --lit: var(--lamp); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .dusk .lights rect { animation: none; }
+  .plot { transition: none; }
+}
