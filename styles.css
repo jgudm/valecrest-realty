@@ -77,11 +77,12 @@ h2 { font-size: clamp(2rem, 4.4vw, 3.25rem); line-height: 1.1; }
   color: #fff;
   overflow: hidden;
 }
-.hero-copy { position: relative; z-index: 1; max-width: 860px; padding: clamp(96px, 15vh, 140px) var(--gutter) 0; }
-h1 { font-size: clamp(2.6rem, 6.6vw, 5.4rem); line-height: 1.03; }
+.hero-copy { position: relative; z-index: 1; max-width: calc(620px + 2 * var(--gutter)); padding: clamp(96px, 15vh, 140px) var(--gutter) 0; }
+h1 { font-size: clamp(2.6rem, min(6.6vw, 11vh), 5.4rem); line-height: 1.03; }
 .hero-copy p { max-width: 54ch; margin-top: 20px; font-size: 1.15rem; color: #e6eeec; }
 
 .dusk { position: absolute; inset: auto 0 0; width: 100%; height: 62%; }
+.dusk .scene { transform: translateX(260px); }
 .dusk .hill { fill: #0c2f31; }
 .dusk .pines { fill: #0a2628; }
 .dusk .house { fill: #0a2a2c; }
@@ -220,16 +221,20 @@ dd { max-width: 58ch; color: var(--soft); }
 .site-foot p:last-child { max-width: 70ch; margin-top: 8px; }
 .foot-brand { font-family: var(--display); font-size: 1.2rem; color: #fff; }
 
+@media (max-width: 1100px) {
+  /* Stack the scene under the copy so the house never runs behind the text. */
+  .hero { min-height: 0; grid-template-rows: auto auto auto; }
+  .dusk { position: relative; inset: auto; grid-row: 2; height: clamp(220px, 46vw, 420px); margin-top: 24px; }
+  .dusk .scene { transform: none; }
+  .finder { grid-row: 3; margin: 0; padding: 16px var(--gutter) 20px; border-radius: 0; box-shadow: none; }
+}
+
 @media (max-width: 900px) {
   .street { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .finder { grid-template-columns: repeat(2, 1fr); }
   .finder label:last-of-type { grid-column: 1 / -1; }
   .finder button { grid-column: 1 / -1; }
   .why, .viewing { grid-template-columns: minmax(0, 1fr); }
-  /* Stack the scene under the copy so the house never runs behind the text. */
-  .hero { min-height: 0; grid-template-rows: auto auto auto; }
-  .dusk { position: relative; inset: auto; grid-row: 2; height: max(220px, 46vw); margin-top: 24px; }
-  .finder { grid-row: 3; margin: 0; padding: 16px var(--gutter) 20px; border-radius: 0; box-shadow: none; }
 }
 
 @media (max-width: 600px) {
