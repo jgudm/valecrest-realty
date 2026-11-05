@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Valecrest Realty | Homes and offices in four countries</title>
+  <meta name="description" content="Concept website for Valecrest Realty, a fictional real estate company. Search homes, apartments and offices in the UAE, UK, USA and Canada.">
+  <meta name="theme-color" content="#0f3b3e">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Young+Serif&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#homes">Skip to listings</a>
+
+  <!-- Building elevations: drawn for this site, so there are no stock photos to license. -->
+  <svg width="0" height="0" class="defs" aria-hidden="true">
+    <symbol id="el-villa" viewBox="0 0 400 240">
+      <rect class="wall" x="40" y="120" width="320" height="120"/>
+      <rect class="wall-2" x="150" y="50" width="150" height="190"/>
+      <rect class="roof" x="24" y="110" width="352" height="10"/>
+      <rect class="roof" x="136" y="40" width="178" height="10"/>
+      <rect class="win" x="170" y="66" width="46" height="150"/>
+      <rect class="win" x="226" y="66" width="56" height="62"/>
+      <rect class="win" x="58" y="140" width="72" height="56"/>
+      <rect class="win" x="318" y="140" width="28" height="56"/>
+      <rect class="door" x="238" y="156" width="34" height="84"/>
+    </symbol>
+    <symbol id="el-flat" viewBox="0 0 400 240">
+      <rect class="wall" x="110" y="14" width="180" height="226"/>
+      <rect class="wall-2" x="40" y="96" width="70" height="144"/>
+      <rect class="wall-2" x="290" y="66" width="70" height="174"/>
+      <g class="win">
+        <rect x="128" y="32" width="30" height="34"/><rect x="185" y="32" width="30" height="34"/><rect x="242" y="32" width="30" height="34"/>
+        <rect x="128" y="82" width="30" height="34"/><rect x="242" y="82" width="30" height="34"/>
+        <rect x="185" y="132" width="30" height="34"/><rect x="242" y="132" width="30" height="34"/>
+        <rect x="128" y="182" width="30" height="34"/><rect x="242" y="182" width="30" height="34"/>
+        <rect x="56" y="116" width="38" height="20"/><rect x="306" y="86" width="38" height="20"/><rect x="306" y="166" width="38" height="20"/>
+      </g>
+      <rect class="door" x="185" y="182" width="30" height="58"/>
+    </symbol>
+    <symbol id="el-beach" viewBox="0 0 400 240">
+      <path class="roof" d="M20 118 200 62l180 56z"/>
+      <rect class="wall" x="52" y="118" width="296" height="74"/>
+      <rect class="roof" x="30" y="190" width="340" height="8"/>
+      <g class="post"><rect x="70" y="198" width="10" height="42"/><rect x="195" y="198" width="10" height="42"/><rect x="320" y="198" width="10" height="42"/></g>
+      <g class="win"><rect x="72" y="134" width="60" height="42"/><rect x="146" y="134" width="108" height="42"/><rect x="268" y="134" width="60" height="42"/></g>
+    </symbol>
+    <symbol id="el-family" viewBox="0 0 400 240">
+      <path class="roof" d="M70 112 170 40l100 72z"/>
+      <rect class="wall" x="88" y="112" width="164" height="128"/>
+      <path class="roof" d="M240 150 298 106l58 44z"/>
+      <rect class="wall-2" x="252" y="150" width="92" height="90"/>
+      <rect class="post" x="214" y="52" width="18" height="44"/>
+      <g class="win"><rect x="106" y="128" width="46" height="38"/><rect x="186" y="128" width="46" height="38"/><rect x="154" y="76" width="32" height="26"/><rect x="106" y="184" width="46" height="38"/></g>
+      <rect class="door" x="186" y="182" width="34" height="58"/>
+      <rect class="post" x="266" y="172" width="64" height="68"/>
+    </symbol>
+    <symbol id="el-office" viewBox="0 0 400 240">
+      <rect class="wall" x="70" y="30" width="260" height="210"/>
+      <rect class="roof" x="58" y="20" width="284" height="10"/>
+      <g class="win">
+        <rect x="88" y="46" width="224" height="30"/>
+        <rect x="88" y="92" width="224" height="30"/>
+        <rect x="88" y="138" width="224" height="30"/>
+      </g>
+      <rect class="door" x="154" y="184" width="92" height="56"/>
+    </symbol>
+    <symbol id="el-cabin" viewBox="0 0 400 240">
+      <path class="pine" d="M58 240 92 140l34 100zM296 240l34-124 34 124z"/>
+      <path class="roof" d="M112 150 200 54l88 96z"/>
+      <rect class="wall" x="132" y="150" width="136" height="90"/>
+      <path class="win" d="M176 124h48v-14l-24-26-24 26z"/>
+      <g class="win"><rect x="148" y="168" width="34" height="34"/><rect x="218" y="168" width="34" height="34"/></g>
+      <rect class="door" x="186" y="186" width="28" height="54"/>
+    </symbol>
+  </svg>
+
+  <header class="site-head">
+    <a class="brand" href="#top">Valecrest Realty</a>
+    <nav aria-label="Main">
+      <a href="#homes">Homes</a>
+      <a href="#why">Why Valecrest</a>
+      <a class="nav-cta" href="#viewing">Book a viewing</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <h1>Find a home that’s worth coming back to.</h1>
+        <p>Valecrest sells verified homes, apartments and offices in the UAE, the UK, the USA and Canada. Tell us where and what you can spend, and we’ll show you what’s open.</p>
+      </div>
+
+      <svg class="dusk" viewBox="0 0 1440 420" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+        <path class="hill" d="M0 420V300c220-70 390-90 560-66s290 40 450 6 310-44 430-18v198z"/>
+        <g class="pines">
+          <path d="m118 330 34-112 34 112zM176 340l26-86 26 86zM1270 330l36-124 36 124zM1336 340l26-90 26 90z"/>
+        </g>
+        <g class="house">
+          <rect x="330" y="232" width="780" height="188"/>
+          <rect x="560" y="96" width="400" height="324"/>
+        </g>
+        <g class="eaves">
+          <rect x="300" y="218" width="840" height="14"/>
+          <rect x="530" y="82" width="460" height="14"/>
+        </g>
+        <g class="lights">
+          <rect style="--d:.2s" x="584" y="118" width="110" height="280"/>
+          <rect style="--d:.9s" x="710" y="118" width="110" height="84"/>
+          <rect style="--d:.5s" x="836" y="118" width="100" height="84"/>
+          <rect style="--d:1.3s" x="710" y="218" width="110" height="84"/>
+          <rect style="--d:1.7s" x="836" y="218" width="100" height="84"/>
+          <rect style="--d:1.1s" x="356" y="258" width="82" height="96"/>
+          <rect style="--d:1.9s" x="456" y="258" width="82" height="96"/>
+          <rect style="--d:.7s" x="984" y="258" width="104" height="96"/>
+        </g>
+        <rect class="doorway" x="744" y="322" width="52" height="98"/>
+      </svg>
+
+      <form class="finder" id="finder" aria-label="Search listings">
+        <label>Location
+          <select name="region">
+            <option value="">Anywhere</option>
+            <option value="uae">UAE</option>
+            <option value="uk">UK</option>
+            <option value="usa">USA</option>
+            <option value="canada">Canada</option>
+          </select>
+        </label>
+        <label>Property type
+          <select name="type">
+            <option value="">Any type</option>
+            <option value="home">Homes and villas</option>
+            <option value="apartment">Apartments</option>
+            <option value="commercial">Commercial</option>
+            <option value="vacation">Vacation homes</option>
+          </select>
+        </label>
+        <label>Budget
+          <select name="budget">
+            <option value="">Any budget</option>
+            <option value="0-1000000">Under $1M</option>
+            <option value="1000000-2000000">$1M to $2M</option>
+            <option value="2000000-3000000">$2M to $3M</option>
+            <option value="3000000-999999999">Over $3M</option>
+          </select>
+        </label>
+        <button type="submit">Show homes</button>
+      </form>
+    </section>
+
+    <section class="homes" id="homes" aria-labelledby="homes-title">
+      <div class="homes-head">
+        <h2 id="homes-title">Open for viewing</h2>
+        <p id="result-count" role="status">6 properties</p>
+      </div>
+
+      <ul class="street" id="street">
+        <li class="plot" data-region="uae" data-type="home" data-price="2500000" data-name="Modern villa, Dubai">
+          <svg viewBox="0 0 400 240" role="img" aria-label="Elevation drawing of a modern two-storey villa"><use href="#el-villa"/></svg>
+          <h3>Modern villa</h3>
+          <p class="where">Dubai, UAE</p>
+          <p class="price">$2,500,000</p>
+          <p class="spec">4 beds, 5 baths, 5,300 sq ft</p>
+          <a href="#viewing" data-book>Book this viewing</a>
+        </li>
+        <li class="plot" data-region="uk" data-type="apartment" data-price="1800000" data-name="City apartment, London">
+          <svg viewBox="0 0 400 240" role="img" aria-label="Elevation drawing of a city apartment building"><use href="#el-flat"/></svg>
+          <h3>City apartment</h3>
+          <p class="where">London, UK</p>
+          <p class="price">$1,800,000</p>
+          <p class="spec">3 beds, 3 baths, 2,900 sq ft</p>
+          <a href="#viewing" data-book>Book this viewing</a>
+        </li>
+        <li class="plot" data-region="usa" data-type="home" data-price="3200000" data-name="Beachfront home, California">
+          <svg viewBox="0 0 400 240" role="img" aria-label="Elevation drawing of a beach house raised on posts"><use href="#el-beach"/></svg>
+          <h3>Beachfront home</h3>
+          <p class="where">California, USA</p>
+          <p class="price">$3,200,000</p>
+          <p class="spec">6 beds, 5 baths, 5,500 sq ft</p>
+          <a href="#viewing" data-book>Book this viewing</a>
+        </li>
+        <li class="plot" data-region="canada" data-type="home" data-price="1250000" data-name="Family home, Toronto">
+          <svg viewBox="0 0 400 240" role="img" aria-label="Elevation drawing of a family house with a garage"><use href="#el-family"/></svg>
+          <h3>Family home</h3>
+          <p class="where">Toronto, Canada</p>
+          <p class="price">$1,250,000</p>
+          <p class="spec">4 beds, 4 baths, 3,400 sq ft</p>
+          <a href="#viewing" data-book>Book this viewing</a>
+        </li>
+        <li class="plot" data-region="uk" data-type="commercial" data-price="4100000" data-name="Dockside offices, London">
+          <svg viewBox="0 0 400 240" role="img" aria-label="Elevation drawing of a low office building"><use href="#el-office"/></svg>
+          <h3>Dockside offices</h3>
+          <p class="where">London, UK</p>
+          <p class="price">$4,100,000</p>
+          <p class="spec">4 floors, 18,000 sq ft</p>
+          <a href="#viewing" data-book>Book this viewing</a>
+        </li>
+        <li class="plot" data-region="canada" data-type="vacation" data-price="640000" data-name="Lake cabin, Ontario">
+          <svg viewBox="0 0 400 240" role="img" aria-label="Elevation drawing of a cabin between pine trees"><use href="#el-cabin"/></svg>
+          <h3>Lake cabin</h3>
+          <p class="where">Ontario, Canada</p>
+          <p class="price">$640,000</p>
+          <p class="spec">3 beds, 2 baths, 1,600 sq ft</p>
+          <a href="#viewing" data-book>Book this viewing</a>
+        </li>
+      </ul>
+
+      <div class="empty" id="empty" hidden>
+        <p>No listings match that search. Try a wider budget or another location.</p>
+        <button type="button" id="clear">Clear search</button>
+      </div>
+    </section>
+
+    <section class="why" id="why" aria-labelledby="why-title">
+      <h2 id="why-title">Buying across a border is hard enough.</h2>
+      <dl>
+        <div><dt>Every listing is checked</dt><dd>We confirm the title and the seller before a property goes on this page.</dd></div>
+        <div><dt>One agent, start to finish</dt><dd>The person you speak to first stays with you through the viewing, the offer and the keys.</dd></div>
+        <div><dt>A viewing within 48 hours</dt><dd>In person if you’re nearby, or by video call with an agent on site if you’re not.</dd></div>
+        <div><dt>Prices in plain terms</dt><dd>You see the fees and taxes for each country before you make an offer.</dd></div>
+      </dl>
+    </section>
+
+    <section class="viewing" id="viewing" aria-labelledby="viewing-title">
+      <div>
+        <h2 id="viewing-title">Book a viewing</h2>
+        <p>Choose a property and we’ll reply with times from the agent who covers it.</p>
+      </div>
+      <form id="viewing-form" novalidate>
+        <label>Your name
+          <input name="name" autocomplete="name" required>
+          <span class="err" data-for="name"></span>
+        </label>
+        <label>Email
+          <input name="email" type="email" autocomplete="email" required>
+          <span class="err" data-for="email"></span>
+        </label>
+        <label>Property
+          <select name="property" id="property" required>
+            <option value="">Choose a property</option>
+          </select>
+          <span class="err" data-for="property"></span>
+        </label>
+        <button type="submit">Request viewing</button>
+        <p class="sent" id="sent" role="status" hidden></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <p class="foot-brand">Valecrest Realty</p>
+    <p>Concept website. Valecrest Realty is a fictional company, and its listings, prices and services are examples. The booking form doesn’t send or store anything.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
